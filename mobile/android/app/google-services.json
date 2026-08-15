@@ -1,0 +1,30 @@
+{
+  "project_info": {
+    "project_number": "201446827139",
+    "firebase_url": "https://crowdsafe-b8bcb-default-rtdb.firebaseio.com",
+    "project_id": "crowdsafe-b8bcb",
+    "storage_bucket": "crowdsafe-b8bcb.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:201446827139:android:c034392b21b202c58827b6",
+        "android_client_info": {
+          "package_name": "com.example.mobile"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDQBXNQ7_6oruLhgQinBaEH9A_jemLZjds"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
