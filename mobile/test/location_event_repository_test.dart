@@ -1,8 +1,9 @@
 import 'package:flutter_test/flutter_test.dart';
+import 'package:sqflite_common_ffi/sqflite_ffi.dart';
+
 import 'package:mobile/database/app_database.dart';
 import 'package:mobile/models/location_event.dart';
 import 'package:mobile/repositories/location_event_repository.dart';
-import 'package:sqflite_common_ffi/sqflite_ffi.dart';
 
 void main() {
   sqfliteFfiInit();
@@ -11,16 +12,16 @@ void main() {
   late LocationEventRepository repository;
 
   setUp(() async {
+    await AppDatabase.instance.close();
+
     repository = LocationEventRepository();
 
-    await AppDatabase.instance.close();
-  });
-
-  tearDown(() async {
     final db = await AppDatabase.instance.database;
 
     await db.delete('location_events');
+  });
 
+  tearDown(() async {
     await AppDatabase.instance.close();
   });
 
