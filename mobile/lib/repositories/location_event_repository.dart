@@ -51,10 +51,4 @@ class LocationEventRepository {
       whereArgs: [eventId],
     );
   }
-
-  Future<void> deleteAllEvents() async {
-    final db = await _database.database;
-
-    await db.delete('location_events');
-  }
 }

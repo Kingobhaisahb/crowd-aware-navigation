@@ -37,9 +37,9 @@ class AppDatabase {
       CREATE TABLE location_events (
         event_id TEXT PRIMARY KEY,
         user_id TEXT NOT NULL,
-        device_id TEXT NOT NULL,
         latitude REAL NOT NULL,
         longitude REAL NOT NULL,
+        device_id TEXT NOT NULL,
         timestamp INTEGER NOT NULL,
         sequence_number INTEGER NOT NULL,
         synced INTEGER NOT NULL DEFAULT 0
@@ -48,10 +48,9 @@ class AppDatabase {
   }
 
   Future<void> close() async {
-    final db = await instance.database;
-
-    await db.close();
-
-    _database = null;
+    if (_database != null) {
+      await _database!.close();
+      _database = null;
+    }
   }
 }
